@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Form from "./Form";
 
-export default function PersonalData({ isSaved, saveInputFields }) {
+export default function PersonalData({ isSaved, saveInputFields, sectionKey }) {
   const inputFields = [
     { name: "firstName", label: "First name" },
     { name: "lastName", label: "Last name" },
@@ -27,11 +27,11 @@ export default function PersonalData({ isSaved, saveInputFields }) {
   };
 
   return (
-    <section className="personal-data">
-      <h1>Your personal information</h1>
+    <section className={sectionKey}>
+      <h1>Personal information</h1>
       <Form
         isSaved={isSaved}
-        saveInputFields={saveInputFields}
+        saveInputFields={(e) => saveInputFields(e, sectionKey)}
         handleInput={handleInput}
         inputFields={inputFields}
         data={data}

@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+section {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  + section {
+    margin-top: 50px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 50px;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 6px;
+
+    font-size: inherit;
+  }
+
+  button {
+    width: 100%;
+    padding: 6px;
+
+    font-size: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    &.saved {
+      margin-top: 7px;
+    }
+  }
+
+  .text {
+    + .text {
+      margin-top: 15.5px;
+    }
+
+    span {
+      display: block;
+      margin-top: 4px;
+
+      font-weight: bold;
+      line-height: 147%;
+    }
+  }
+}

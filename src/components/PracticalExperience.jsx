@@ -1,17 +1,25 @@
 import { useState } from "react";
 import Form from "./Form";
 
-export default function Education({ isSaved, saveInputFields, sectionKey }) {
+export default function PracticalExperience({
+  isSaved,
+  saveInputFields,
+  sectionKey,
+}) {
   const inputFields = [
-    { name: "schoolName", label: "School name" },
-    { name: "studyTitle", label: "Title of study" },
-    { type: "date", name: "dateOfStudy", label: "Date of study" },
+    { name: "companyName", label: "Company name" },
+    { name: "positionTitle", label: "Position title" },
+    { name: "responsibilities", label: "Main responsibilities" },
+    { type: "date", name: "startDate", label: "Start date" },
+    { type: "date", name: "endDate", label: "End date" },
   ];
 
   const [data, setData] = useState({
-    schoolName: "",
-    studyTitle: "",
-    dateOfStudy: "",
+    companyName: "",
+    positionTitle: "",
+    responsibilities: "",
+    startDate: "",
+    endDate: "",
   });
 
   const handleInput = (e) => {
@@ -26,7 +34,7 @@ export default function Education({ isSaved, saveInputFields, sectionKey }) {
 
   return (
     <section className={sectionKey}>
-      <h1>Education</h1>
+      <h1>Pracitical Experience</h1>
       <Form
         isSaved={isSaved}
         saveInputFields={(e) => saveInputFields(e, sectionKey)}

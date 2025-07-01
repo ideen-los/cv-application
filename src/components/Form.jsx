@@ -15,11 +15,23 @@ export default function Form({
   if (isSaved) {
     content = (
       <>
-        {Object.keys(data).map((entry) => {
+        {Object.keys(data).map((value) => {
+          {
+            /*
+            For each key/value pair in the data object, find the corresponding label from the inputFields array. 
+            Then print the label and the value from the corresponding data object's key.
+            */
+          }
+          const field = inputFields.find((field) => field.name === value);
+          const label = field ? field.label : value;
+
           return (
-            <Fragment key={entry}>
-              {data[entry]}
-              <br />
+            <Fragment key={value}>
+              <div className="text">
+                {label}
+                <br />
+                <span>{data[value]}</span>
+              </div>
             </Fragment>
           );
         })}
@@ -33,10 +45,12 @@ export default function Form({
     content = (
       <form onChange={handleInput}>
         {inputFields.map((field) => {
+          {
+            /* Print each element in the inputFields array as <InputField /> and fill it with the data defined in the array. */
+          }
           return (
             <Fragment key={field.name}>
               <InputField {...field} value={data[field.name]} />
-              <br />
             </Fragment>
           );
         })}
