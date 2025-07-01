@@ -1,19 +1,17 @@
 import { useState } from "react";
 import Form from "./Form";
 
-export default function PersonalData({ isSaved, saveInputFields }) {
+export default function Education({ isSaved, saveInputFields }) {
   const inputFields = [
-    { name: "firstName", label: "First name" },
-    { name: "lastName", label: "Last name" },
-    { type: "tel", name: "phone", label: "Phone" },
-    { type: "email", name: "email", label: "E-Mail" },
+    { name: "schoolName", label: "School name" },
+    { name: "studyTitle", label: "Title of study" },
+    { type: "date", name: "dateOfStudy", label: "Date of study" },
   ];
 
   const [data, setData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
+    schoolName: "",
+    studyTitle: "",
+    dateOfStudy: "",
   });
 
   const handleInput = (e) => {
@@ -28,7 +26,7 @@ export default function PersonalData({ isSaved, saveInputFields }) {
 
   return (
     <section className="personal-data">
-      <h1>Your personal information</h1>
+      <h1>Your education</h1>
       <Form
         isSaved={isSaved}
         saveInputFields={saveInputFields}
